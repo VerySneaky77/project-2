@@ -5,7 +5,7 @@ Carlos
 
 Mackenzie
 
-Alpan
+Alapan
 
 # Project concept
 We will be building a functional contacts app where you can also link your favorite photos of your friends. 
