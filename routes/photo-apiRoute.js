@@ -1,24 +1,32 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get photos for a selected contact
-  app.get("/api/:contactId/photo", function(req, res) {
-    db.Photo.findAll({where: k}).then(function(dbPhoto) {
+  var query = {};
+  if (req.query.contactId) {
+    query.contactId = req.query.contactId;
+  }
+
+  app.get("/api/contacts/:contactId/photo", function (req, res) {
+    db.Photo.findAll({
+      where: query,
+      include: [db.Contact]
+    }).then(function (dbPhoto) {
       res.json(dbPhoto);
     });
   });
 
   // Create a new photo
-  app.post("/api/:contactId/photo", function(req, res) {
-    db.Photo.create(req.body).then(function(dbPhoto) {
+  app.post("/api/contacts/:contactId/photo", function (req, res) {
+    db.Photo.create(req.body).then(function (dbPhoto) {
       res.json(dbPhoto);
     });
   });
 
   // Delete a photo by its ID
-  app.delete("/api/:contactId/:photoId", function(req, res) {
-    db.Photo.destroy({ where: { id: req.params.id } }).then(function(dbPhoto) {
-      res.json(dbPhoto);
-    });
-  });
+  //   app.delete("/api/contacts/:contactId/:photoId", function (req, res) {
+  //     db.Photo.destroy({ where: { id: req.params.photoId } }).then(function (dbPhoto) {
+  //       res.json(dbPhoto);
+  //     });
+  //   });
 };
