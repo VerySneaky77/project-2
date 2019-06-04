@@ -1,0 +1,15 @@
+Jamie Chung
+nameFirst : {Jamie}
+nameLast : {Chung},
+nameMiddle: {Jilynn},
+numPhone: {4152009131},
+streetAddress: {2325 3rd St #404},
+cityAddress: {San Francisco},
+stateAddress: {CA},
+zipCode: {94107},
+emailAddress: {Chungacting@jamiechung.net},
+profession: {Actress},
+linkOne: {https://drive.google.com/open?id=18BxHWJWe_G8Fm78sPcMjfbwsAT9iQ55R},
+linkTwo: {https://drive.google.com/open?id=1RIlPVP-prkXuoDoi4yPq73MJVkxtrzNo},
+linkThree: {https://drive.google.com/open?id=1OaKa0xYJZyak2vjtU0Uau-2EZevoebRO},
+linkFour: {https://drive.google.com/open?id=1-eOEzMELDzxf7_lNeFZH2hqrF4UbeKgq},
