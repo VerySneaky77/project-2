@@ -1,0 +1,15 @@
+Bobby Cannavale
+nameFirst : {Bobby}
+nameLast : {Cannavale},
+nameMiddle: {Michael},
+numPhone: {2012021450},
+streetAddress: {34 Erwin Park Rd},
+cityAddress: {Montclair},
+stateAddress: {NJ},
+zipCode: {07042}
+emailAddress: {cannavillebooking@bobbycannaville.net},
+profession: {Actor},
+linkOne: {https://drive.google.com/open?id=1DKF1mAa8pqYQlgBbxcvhBvctrPb51Pow},
+linkTwo: {https://drive.google.com/open?id=1QJMOhOHrk_tZ_OTZLfKUnZ6fXVLOMOly},
+linkThree: {https://drive.google.com/open?id=1KXO1JdSGTaE7pmYNecd82IM_QIabTCFF},
+linkFour: {https://drive.google.com/open?id=1JbiPgw2D_3WTUoAGX5FujcQYrBCeSpXJ},
