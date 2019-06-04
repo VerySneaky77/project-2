@@ -1,0 +1,60 @@
+<% include partials/header.ejs %>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+
+    <% if (player) { %>
+        <form class="add-contact-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="first-name">First Name</label>
+                    <input type="text" class="form-control" name="nameFirst" id="first-name" value="<%= contact.nameFirst %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" class="form-control" name="nameLast" id="last-name" value="<%= player.nameLast %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">Middle Name</label>
+                    <input type="text" class="form-control" name="nameMiddle" id="middle-name" value="<%= contact.nameMiddle %>" required>
+                </div>                
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="number">Phone Number</label>
+                    <input type="number" class="form-control" name="numPhone" id="number" placeholder="Number" value="<%= contact.numPhone %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">Street Address</label>
+                    <input type="text" class="form-control" name="streetAddress" id="street-address" value="<%= contact.streetAddress %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">City Address</label>
+                    <input type="text" class="form-control" name="cityAddress" id="city-address" value="<%= contact.cityAddress %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">State Address</label>
+                    <input type="text" class="form-control" name="stateAddress" id="state-address" value="<%= contact.stateAddress %>" required>
+                </div>
+                <div class="form-group col-md-6">
+                        <label for="number">Zip Code</label>
+                        <input type="number" class="form-control" name="zipCode" id="number" placeholder="Number" value="<%= contact.zipCode %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">Email Address</label>
+                    <input type="text" class="form-control" name="emailAddress" id="email-address" value="<%= contact.emailAddress %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">Profession</label>
+                    <input type="text" class="form-control" name="profession" id="profession" value="<%= contact.profession %>" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success float-right">Update Contact</button>
+        </form>
+    <% } else { %>
+        <p class="text-center">Contact Not Found. Go <a href="/add">here</a> to add contacts.</p>
+    <% } %>
+</div>
+</div>
+</body>
+</html>
