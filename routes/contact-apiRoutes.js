@@ -14,11 +14,4 @@ module.exports = function(app) {
       res.json(dbContacts);
     });
   });
-
-  // Delete a contact by id
-  // app.delete("/api/contacts/:id", function(req, res) {
-  //   db.Contact.destroy({ where: { id: req.params.id } }).then(function(dbContacts) {
-  //     res.json(dbContacts);
-  //   });
-  // });
 };
