@@ -1,0 +1,15 @@
+Ben Foster
+nameFirst : {Ben}
+nameLast : {Foster},
+nameMiddle: {A},
+numPhone: {2122003275},
+streetAddress: {6 Bridge Drive},
+cityAddress: {New York},
+stateAddress: {NY},
+zipCode: {10003}
+emailAddress: {booking@benfoster.com},
+profession: {Actor},
+linkOne: {https://drive.google.com/open?id=1DdE4bjOxWiaJ3EXOPUR4gL1nWWB1el2-},
+linkTwo: {https://drive.google.com/open?id=1v3OSZDQ3GtGBYw6z4zr9vsvVzaKrNyB6},
+linkThree: {https://drive.google.com/open?id=1HhwBRfbZi2jvKPyfupC1dwlrikV6w39D},
+linkFour: {https://drive.google.com/open?id=1TzZbwSCUCiuD2AKZhJlEW2QNMtn6F0we},

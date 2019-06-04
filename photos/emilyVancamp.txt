@@ -1,0 +1,15 @@
+Emily Vancamp
+nameFirst : {Emily}
+nameLast : {Vancamp},
+nameMiddle: {Irene},
+numPhone: {2132011984},
+streetAddress: {200 N Avenue 64},
+cityAddress: {Los Angeles},
+stateAddress: {CA},
+zipCode: {90042},
+emailAddress: {contact@emilyvancamp.com},
+profession: {Actress},
+linkOne: {https://drive.google.com/open?id=1XrWPok8y_9gl8JOSS4sKxITBQCMb_GrQ},
+linkTwo: {https://drive.google.com/open?id=1UjSYCjiIyhO_JBFp9BxpYV0IFXf5GjBm},
+linkThree: {https://drive.google.com/open?id=1cjkGMhwkGyGF1-H520Ci9QmO2nDoHiD2},
+linkFour: {https://drive.google.com/open?id=1ZJS4qqBHvlKMxVehSJlJ3T4bG2deJYYl},
