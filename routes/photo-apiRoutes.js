@@ -1,13 +1,14 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Get photos for a selected contact
-  var query = {};
-  if (req.query.contactId) {
-    query.contactId = req.query.contactId;
-  }
 
-  app.get("/api/contacts/:contactId/photo", function (req, res) {
+  app.get("/api/contacts/photo", function (req, res) {
+    // Get photos for a selected contact
+    var query = {};
+    if (req.query.contactId) {
+      query.contactId = req.query.contactId;
+    }
+
     db.Photo.findAll({
       where: query,
       include: [db.Contact]
@@ -17,7 +18,7 @@ module.exports = function (app) {
   });
 
   // Create a new photo
-  app.post("/api/contacts/:contactId/photo", function (req, res) {
+  app.post("/api/contacts/photo", function (req, res) {
     db.Photo.create(req.body).then(function (dbPhoto) {
       res.json(dbPhoto);
     });
