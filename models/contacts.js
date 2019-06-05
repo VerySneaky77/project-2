@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
     },
     numPhone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     streetAddress: {
@@ -25,7 +25,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
     },
     zipCode: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     emailAddress: {
       type: DataTypes.STRING,

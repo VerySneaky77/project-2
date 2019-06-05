@@ -1,7 +1,6 @@
 var db = require("../models");
 
 module.exports = function (app) {
-
   app.get("/api/contacts/view", function (req, res) {
     // Get photos for a selected contact
     var query = {};

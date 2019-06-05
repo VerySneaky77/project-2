@@ -6,13 +6,13 @@ var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  addContact: function(example) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/cont",
       data: JSON.stringify(example)
     });
   },
@@ -58,6 +58,11 @@ var refreshExamples = function() {
     $exampleList.append($examples);
   });
 };
+
+// A function to get Contacts and then render table of contacts
+function getContacts() {
+  $.get("/api/contacts", renderAuthorList);
+}
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
