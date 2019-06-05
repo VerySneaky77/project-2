@@ -11,9 +11,9 @@ module.exports = function (app) {
   });
 
   // Load page and pass in a contact by id
-  app.get("/contact/:id", function (req, res) {
+  app.get("/view", function (req, res) {
     db.Contact.findOne({ where: { id: req.params.id } }).then(function (dbContact) {
-      res.render("contact", {
+      res.render("view-contact", {
         contacts: dbContact
       });
     });
@@ -24,9 +24,9 @@ module.exports = function (app) {
     res.render("add-contact", {
     });
   });
-  
-  // Redirect to view page
-  app.get("/view", function (req, res) {
+
+  // Redirect to edit page
+  app.get("/view/edit", function (req, res) {
     res.render("view-contact", {
     });
   });

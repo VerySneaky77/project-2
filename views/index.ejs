@@ -8,17 +8,18 @@
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Profession</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <% contacts.forEach((contact, index) => { %>
             <tr>
-                <a href="/view/<%= contact.id %>" target="_blank" rel="noopener">
-                    <th scope="row"><%= contact.id %></th>
-                    <td><%= contact.nameFirst %></td>
-                    <td><%= contact.nameLast %></td>
-                    <td><%= contact.profession %></td>
-                </a>
+                <th scope="row"><%= contact.id %></th>
+                <td><%= contact.nameFirst %></td>
+                <td><%= contact.nameLast %></td>
+                <td><%= contact.profession %></td>
+                <td><a href="/view/<%= contact.id %>" target="_blank" rel="noopener"
+                        class="btn btn-sm btn-success">View</a></td>
             </tr>
             <% }) %>
         </tbody>
