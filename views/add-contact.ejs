@@ -98,7 +98,6 @@
                 .val()
                 .trim(),
         };
-
         // Submits a new contact then brings user to index page
         $.post("/api/contacts", newContact, function () {
             window.location.href = "/";
