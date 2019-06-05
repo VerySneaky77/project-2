@@ -14,10 +14,9 @@ module.exports = function (app) {
     db.Contact.findOne({
       where: {
         id: req.params.id
-      },
-      include: [db.Photo]
-    }).then(function (dbPhoto) {
-      res.json(dbPhoto);
+      }
+    }).then(function (dbContact) {
+      res.json(dbContact);
     });
   });
   
@@ -30,6 +29,7 @@ module.exports = function (app) {
         }
       })
       .then(function(dbContact) {
+        console.log(dbContact);
         res.json(dbContact);
       });
   });

@@ -1,6 +1,5 @@
 <% include header.ejs %>
 <div class="table-wrapper">
-    <% if (contactInfo.length > 0) {%>
     <table class="table table-hovered">
         <thead class="thead-dark">
             <tr>
@@ -13,11 +12,11 @@
         </thead>
         <tbody>
             <tr>
-                <td><%= contactInfo.id %></td>
-                <td><%= contactInfo.nameFirst %></td>
-                <td><%= contactInfo.nameLast %></td>
-                <td><%= contactInfo.nameMiddle %></td>
-                <td><%= contactInfo.profession %></td>
+                <td><%= contact.id %></td>
+                <td><%= contact.nameFirst %></td>
+                <td><%= contact.nameLast %></td>
+                <td><%= contact.nameMiddle %></td>
+                <td><%= contact.profession %></td>
             </tr>
         </tbody>
     </table>
@@ -34,47 +33,22 @@
         </thead>
         <tbody>
             <tr>
-                <th scope="row"><%= player.id %></th>
-                <td><%= contactInfo.emailAddress %></td>
-                <td><%= contactInfo.numPhone %></td>
-                <td><%= contactInfo.streetAddress %></td>
-                <td><%= contactInfo.cityAddress %></td>
-                <td><%= contactInfo.stateAddress %></td>
-                <td><%= contactInfo.zipCode %></td>
+                <td><%= contact.emailAddress %></td>
+                <td><%= contact.numPhone %></td>
+                <td><%= contact.streetAddress %></td>
+                <td><%= contact.cityAddress %></td>
+                <td><%= contact.stateAddress %></td>
+                <td><%= contact.zipCode %></td>
             </tr>
         </tbody>
     </table>
     <div class="picsBox">
-        <img src="/assets/img/<%= player.image %>" class="rounded-circle player-img" alt="">
+        
     </div>
 </div>
 </div>
 <script>
-    var url = window.location.search;
-    var contactId;
-    var contactInfo;
-
-    if (url.indexOf("?id=") !== -1) {
-        contactId = url.split("=")[1];
-        getInfo(contactId);
-    }
-    // If there's no authorId we just get all posts as usual
-    else {
-        getInfo();
-    }
-
-    getInfo();
-    // This function grabs posts from the database and updates the view
-    function getInfo(contact) {
-        contactId = contact || "";
-        if (contactId) {
-            contactId = "/?id=" + contactId;
-        }
-        $.get("/api/view" + authorId, function (data) {
-            console.log("Contact", data);
-            contactnInfo = data;
-        });
-    }
+    
 </script>
 </body>
 
