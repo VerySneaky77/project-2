@@ -1,7 +1,7 @@
 <% include header.ejs %>
 <div class="container">
     <h2 class="text-center text-danger">Add New Contact</h2>
-    <form class="add-contact-form" action="" method="post" enctype="multipart/form-data">
+    <form class="add-contact-form" id="addForm" action="" method="post" enctype="multipart/form-data">
         <div class="form-row">
             <div class="form-group col-md-4">
                 <input type="text" class="form-control" name="nameFirst" id="nameFirst" placeholder="First Name"
@@ -55,6 +55,56 @@
     </form>
 </div>
 </div>
+<script>
+    // Adding an event listener for when the form is submitted
+    $("#addForm").on("submit", handleFormSubmit)
+    // Handle new contact addition
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        // Avoid blank submission
+        if (!$("#nameFirst").val().trim() || !$("#nameLast").val().trim() || !$("#profession").val().trim()) {
+            return;
+        }
+        // Constructing a newContact object to pass to database
+        var newContact = {
+            nameFirst: $("#nameFirst")
+                .val()
+                .trim(),
+            nameLast: $("#nameLast")
+                .val()
+                .trim(),
+            nameMiddle: $("#nameMiddle")
+                .val()
+                .trim(),
+            profession: $("#profession")
+                .val()
+                .trim(),
+            numPhone: $("#numPhone")
+                .val()
+                .trim(),
+            emailAddress: $("#emailAddress")
+                .val()
+                .trim(),
+            streetAddress: $("#streetAddress")
+                .val()
+                .trim(),
+            cityAddress: $("#cityAddress")
+                .val()
+                .trim(),
+            stateAddress: $("#stateAddress")
+                .val()
+                .trim(),
+            zipCode: $("#zipCode")
+                .val()
+                .trim(),
+        };
+
+        // Submits a new contact then brings user to index page
+        $.post("/api/contacts", newContact, function () {
+            window.location.href = "/";
+        });
+    }
+</script>
 </body>
 
 </html>

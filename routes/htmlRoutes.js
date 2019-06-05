@@ -5,7 +5,6 @@ module.exports = function (app) {
   app.get("/", function (req, res) {
     db.Contact.findAll({}).then(function (dbContact) {
       res.render("index", {
-        msg: "Welcome!",
         contacts: dbContact
       });
     });
