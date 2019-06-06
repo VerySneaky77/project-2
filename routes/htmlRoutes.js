@@ -12,12 +12,15 @@ module.exports = function (app) {
 
   // Load page and pass in a contact by id
   app.get("/view/:id", function (req, res) {
-    db.Contact.findOne({ where: { id: req.params.id } }).then(function (dbContact) {
+    db.Contact.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Photo]
+    }).then(function (dbContact) {
       res.render("view-contact", {
         contact: dbContact
       });
-      
-      console.log(dbContact);
     });
   });
 
