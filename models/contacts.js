@@ -1,4 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
+// Contact object for sequelize to add to the database
   var Contact = sequelize.define("Contact", {
     nameFirst : {
       type: DataTypes.STRING,
