@@ -15,9 +15,9 @@ module.exports = function (app) {
       where: {
         id: req.params.id
       },
-      include: [db.Photo]
-    }).then(function (dbPhoto) {
-      res.json(dbPhoto);
+      include: [dbPhoto]
+    }).then(function (dbContact) {
+      res.json(dbContact);
     });
   });
   
@@ -30,6 +30,7 @@ module.exports = function (app) {
         }
       })
       .then(function(dbContact) {
+        console.log(dbContact);
         res.json(dbContact);
       });
   });
