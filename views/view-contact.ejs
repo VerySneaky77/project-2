@@ -23,12 +23,12 @@
     <table class="table table-hovered">
         <thead class="thead-dark">
             <tr>
+                <th scope="col">Email Address</th>
                 <th scope="col">Phone Number</th>
                 <th scope="col">Street Address</th>
                 <th scope="col">City</th>
                 <th scope="col">State</th>
                 <th scope="col">Zip Code</th>
-                <th scope="col">Email Address</th>
             </tr>
         </thead>
         <tbody>
@@ -42,14 +42,20 @@
             </tr>
         </tbody>
     </table>
-    <div class="picsBox">
-        
+    <div class="row">
+        <h2 class="col-md-3">Photos</h2>
+        <div class="col-md-2">
+            <a href="/view/<%= contact.id %>/add" target="_blank" rel="noopener" class="btn btn-sm btn-success">Add
+                Photo</a>
+        </div>
+    </div>
+    <div class="row picsBox">
+        <% photos.forEach((photo, index) => { %>
+        <img src="<%= photo.source %>">
+        <% }) %>
     </div>
 </div>
 </div>
-<script>
-    
-</script>
 </body>
 
 </html>

@@ -1,11 +1,11 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  app.get("/api/view/:id/photos", function (req, res) {
+  app.get("/api/view/:id", function (req, res) {
     // Get photos for a selected contact
     var query = {};
-    if (req.query.contactId) {
-      query.contactId = req.query.contactId;
+    if (req.query.id) {
+      query.ContactId = req.query.id;
     }
 
     db.Photo.findAll({
@@ -17,16 +17,9 @@ module.exports = function (app) {
   });
 
   // Create a new photo
-  app.post("/api/contacts", function (req, res) {
+  app.post("/api/view", function (req, res) {
     db.Photo.create(req.body).then(function (dbPhoto) {
       res.json(dbPhoto);
     });
   });
-
-  // Delete a photo by its ID
-  //   app.delete("/api/contacts/:contactId/:photoId", function (req, res) {
-  //     db.Photo.destroy({ where: { id: req.params.photoId } }).then(function (dbPhoto) {
-  //       res.json(dbPhoto);
-  //     });
-  //   });
 };

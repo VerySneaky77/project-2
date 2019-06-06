@@ -14,7 +14,8 @@ module.exports = function (app) {
     db.Contact.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      include: [dbPhoto]
     }).then(function (dbContact) {
       res.json(dbContact);
     });
