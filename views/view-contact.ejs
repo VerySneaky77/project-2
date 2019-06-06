@@ -42,20 +42,49 @@
             </tr>
         </tbody>
     </table>
-    <div class="row">
-        <h2 class="col-md-3">Photos</h2>
-        <div class="col-md-2">
-            <a href="/view/<%= contact.id %>/add" target="_blank" rel="noopener" class="btn btn-sm btn-success">Add
-                Photo</a>
+    <div class="container">
+        <div class="row">
+            <h2 class="col-md-3">Photos</h2>
         </div>
+        <div class="row">
+            <h2 class="text-danger col-md-3">Add New Photo</h2>
+        </div>
+        <form class="add-contact-form" id="photoAddForm" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="source" id="source" placeholder="Hyperlink to Photo">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Add Photo</button>
+        </form>
     </div>
     <div class="row picsBox">
-        <% photos.forEach((photo, index) => { %>
-        <img src="<%= photo.source %>">
-        <% }) %>
     </div>
 </div>
 </div>
+<script>
+    let url = window.location.href;
+    let getId = url.slice(url.lastIndexOf("/") + 1);
+    // Adding an event listener for when the form is submitted
+    $("#photoAddForm").on("submit", handleFormSubmit)
+    // Handle new contact addition
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        // Avoid blank submission
+        if (!$("#source").val().trim()) { return; }
+        // Constructing a newContact object to pass to database
+        var newPhoto = {
+            source: $("#source")
+                .val()
+                .trim(),
+            ContactId: getId
+        };
+        // Submits a new contact then brings user to index page
+        $.post("/api/view/addPhoto", newPhoto, function () {
+            window.location.href = url;
+        });
+    }
+</script>
 </body>
 
 </html>

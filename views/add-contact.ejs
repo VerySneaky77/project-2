@@ -1,7 +1,7 @@
 <% include header.ejs %>
 <div class="container">
     <h2 class="text-center text-danger">Add New Contact</h2>
-    <form class="add-contact-form" id="addForm" action="" method="post" enctype="multipart/form-data">
+    <form class="add-contact-form" id="contactAddForm" action="" method="post" enctype="multipart/form-data">
         <div class="form-row">
             <div class="form-group col-md-4">
                 <input type="text" class="form-control" name="nameFirst" id="nameFirst" placeholder="First Name"
@@ -57,7 +57,7 @@
 </div>
 <script>
     // Adding an event listener for when the form is submitted
-    $("#addForm").on("submit", handleFormSubmit)
+    $("#contactAddForm").on("submit", handleFormSubmit)
     // Handle new contact addition
     function handleFormSubmit(event) {
         event.preventDefault();

@@ -17,7 +17,7 @@ module.exports = function (app) {
   });
 
   // Create a new photo
-  app.post("/api/view", function (req, res) {
+  app.post("/api/view/addPhoto", function (req, res) {
     db.Photo.create(req.body).then(function (dbPhoto) {
       res.json(dbPhoto);
     });

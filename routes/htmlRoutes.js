@@ -16,15 +16,8 @@ module.exports = function (app) {
       res.render("view-contact", {
         contact: dbContact
       });
-    });
-  });
-
-  // Load add photo page and pass in a contact by id
-  app.get("/view/:id/add", function (req, res) {
-    db.Contact.findOne({ where: { id: req.params.id } }).then(function (dbContact) {
-      res.render("add-photo", {
-        contact: dbContact
-      });
+      
+      console.log(dbContact);
     });
   });
 

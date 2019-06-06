@@ -1,3 +1,4 @@
+// Boilerplate provided. Creates the sequelize models
 "use strict";
 
 const fs = require("fs");
